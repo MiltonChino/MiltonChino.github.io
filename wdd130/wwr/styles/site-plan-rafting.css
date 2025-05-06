@@ -11,19 +11,19 @@ Fonts are separated by a & */
   --accent2-color: #f8f0fb;
 
   /* change the values below to your chosen font(s) */
-  --heading-font: "IM Fell French Canon";
-  --paragraph-font: Lato, Helvetica, sans-serif;
+  --heading-font: "Bebas Neue";
+  --paragraph-font: Open Sans, sans-serif;
 
   /* these colors below should be chosen from among your palette colors above */
-  --headline-color-on-white: #396e94; /* headlines on a white background */
-  --headline-color-on-color: white; /* headlines on a colored background */
-  --paragraph-color-on-white: #396e94; /* paragraph text on a white background */
-  --paragraph-color-on-color: white; /* paragraph text on a colored background */
-  --paragraph-background-color: #396e94;
-  --nav-link-color: #396e94;
-  --nav-background-color: #d4ac0d;
-  --nav-hover-link-color: white;
-  --nav-hover-background-color: #396e94;
+  --headline-color-on-white: #008bf8; /* headlines on a white background */
+  --headline-color-on-color: #f8f0fb; /* headlines on a colored background */
+  --paragraph-color-on-white: #008bf8; /* paragraph text on a white background */
+  --paragraph-color-on-color: #f8f0fb; /* paragraph text on a colored background */
+  --paragraph-background-color: #7a306c;
+  --nav-link-color: #008bf8;
+  --nav-background-color: #dea54b;
+  --nav-hover-link-color: #f8f0fb;
+  --nav-hover-background-color: #008bf8;
 }
 
 /*  Look around below...but DON'T CHANGE ANYTHING! */
