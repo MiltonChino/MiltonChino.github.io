@@ -14,10 +14,13 @@
 
 body {
   background-color: var(--accent2-color);
-  font-family: var(--heading-font), var(--paragraph-font);
-    font-size: 22px;
+  font-family: Open Sans, sans-serif;
+    font-size: 18px;
     margin: 0;
     padding: 0;
+}
+main section img{
+  box-sizing: border-box;
 }
 h2 {
  margin: 0;
@@ -29,6 +32,9 @@ header {
   width: 50px;
   height: auto;
 }
+#logo_link {
+  padding-top: 5px;
+}
 
 #content {
   width: 90%;
@@ -39,6 +45,8 @@ nav a {
   text-align: center;
   color: var(--accent2-color);
   text-decoration: none;
+  padding: 35px;
+  font-size: 15px;
 }
 nav ul {
   list-style-type: none;
@@ -70,6 +78,7 @@ nav a:hover {
   color: var(--accent2-color);
   font-family: var(--heading-font);
   font-size: 2em;
+  margin-top: 10px;
 }
 h4 {
   background-color: var(--accent1-color);
@@ -79,16 +88,15 @@ h4 {
 main section {
   text-align: center;
 }
-#background {
-  height: 725px;
-}
-
 .book,
 .join {
   background-color: var(--accent1-color);
   color: var(--accent2-color);
   text-decoration: none;
   font-size: 18px;
+  padding: 15px 30px;
+  margin-top: 50px;
+  border-radius: 5px;
 }
 .book:hover,
 .join:hover {
@@ -97,14 +105,22 @@ main section {
 }
 .icon {
   width: 80px;
+  padding-top: 10px;
 }
+.mountains {
+  width: 100%;
+  height: auto;
+}
+
 #background {
   background-color: var(--secondary-color);
+  height: 725px;
 }
 .msg {
   background-color: var(--accent1-color);
   color: var(--accent2-color);
   line-height: 1.5em;
+  padding: 35px;
 }
 .msg h2 {
   font-family: var(--heading-font);
@@ -117,11 +133,20 @@ main section {
 }
 .msg p {
     font-size: 2em;
+    padding-bottom: 15px;
 }
 
+.rivers-card, .camping-card, .rapids-card {
+  margin: 200px 0;
+}
+.card-img {
+  border: 10px solid var(--primary-color);
+}
 footer {
   background-color: var(--primary-color);
   color: var(--accent2-color);
+  padding: 25px 50px;
+  margin-top: 200px;
 }
 footer a {
   background-color: var(--primary-color);
@@ -137,4 +162,8 @@ footer p {
 }
 footer p a:hover {
   text-decoration: underline;
+}
+
+footer .social img {
+  padding-top: 15px;
 }
