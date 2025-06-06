@@ -27,6 +27,10 @@ h2 {
 }
 header {
   background-color: var(--primary-color);
+  display: grid;
+  grid-template-columns: 150px auto;
+  justify-items: center;
+  align-items: center;
 }
 .logo {
   width: 50px;
@@ -34,6 +38,8 @@ header {
 }
 #logo_link {
   padding-top: 5px;
+  justify-self: center;
+    align-self: center;
 }
 
 #content {
@@ -41,6 +47,13 @@ header {
   max-width: 1600px;
   margin: 0 auto;
 }
+nav {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
 nav a {
   text-align: center;
   color: var(--accent2-color);
@@ -48,18 +61,27 @@ nav a {
   padding: 35px;
   font-size: 15px;
 }
-nav ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-}
 
 nav a:hover {
   background-color: var(--secondary-color);
   color: var(--accent2-color);
 }
+#hero {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    margin-top: -100px;
+}
+#hero-box {
+    grid-column: 1/4;
+    grid-row: 1/3;
+     z-index: -1;
+}
+#hero-text {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    margin-top: 100px;
+}
+
 #hero-msg h1 {
   text-align: center;
 }
