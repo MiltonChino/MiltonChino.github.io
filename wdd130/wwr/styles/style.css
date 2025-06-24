@@ -235,6 +235,10 @@ footer .social img {
   padding-top: 15px;
 }
 
+/* Rivers page */
+
+
+
 @media screen and (max-width: 900px) {
   header {
   background-color: var(--primary-color);
