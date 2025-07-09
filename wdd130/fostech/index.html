@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Bar</title>
+    <link rel="stylesheet" href="styles/style.css" />
+</head>
+<body>
+<div id="content">
+    <header>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" id="logo_link">
+                <img src="images/logo.png" alt="Fostech Logo" class="logo">
+            </a>
+
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Actions</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Help</a>
+                </li>
+            </ul>
+
+            <div style="display: flex; align-items: center; gap: 20px;">
+                <a href="#" class="contact-btn">Contact</a>
+                <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+            </div>
+        </div>
+    </nav>
+    </header>
+      <div id="hero">
+        <div id="hero-box">
+          <img
+            src="images/discover1.png"
+            id="hero-img"
+            alt="People enjoying rafting"
+          />
+        </div>
+        <section id="hero-msg">
+          <h1 class="home-title">Adopt AI and Technology</h1>
+          <h4>Learned about practical solutions with a direct impact on productivity and growth at your business</h4>
+          <div class="button-box">
+            <a href="contactus.html" class="book">Book Now</a>
+          </div>
+        </section>
+      </div>
+      <main class="home-grid">
+        <section class="profit-card">
+          <img src="images/grow1.jpg" alt="Improve profitability" class="card-img" />
+          <h2>Improve profitability</h2>
+        </section>
+        <section class="optimize-card">
+          <img
+            src="images/control-tech1.jpg"
+            alt="Optimize operations"
+            class="card-img"
+          />
+          <h2>Optimize operations</h2>
+        </section>
+        <section class="competitive-card">
+          <img src="images/discover2.png" alt="Remain Competitive" class="card-img" />
+          <h2>Remain competitive</h2>
+        </section>
+        </main>
+     <div class="left-row-grid">
+          <img src="images/grow2.jpg" alt="key information" class="left-img" />
+          <section class="msg-right">
+          <h2>Discover what you need, and what we give to you</h2>
+          <p>
+            <ul>
+                <li>An smart device or computer</li>
+                <li>Internet Coverage Wifi or Mobile data</li>
+                <li>Access to our website</li>
+                <li>Desire to learn more</li>
+                <li>Desire to earn more</li>
+            </ul>
+          </p>
+          </section>
+            <div id="rivers-background"></div>
+    </div>
+
+      <footer>
+        <p>Fostech &copy; 2025 - Milton Chino</p>
+        <p><a href="actions.html">Actions</a></p>
+        <p><a href="help.html">Help</a></p>
+        <div class="social">
+          <a href="https://facebook.com" target="_blank">
+            <img src="images/facebook.png" alt="fb icon" />
+          </a>
+          <a href="https://instagram.com" target="_blank">
+            <img src="images/instagram.png" alt="instagram icon" />
+          </a>
+        </div>
+      </footer>
+</div>
+</body>
+    <script>
+        function toggleMobileMenu() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('active');
+        }
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navMenu').classList.remove('active');
+            });
+        });
+    </script>
+</html>
