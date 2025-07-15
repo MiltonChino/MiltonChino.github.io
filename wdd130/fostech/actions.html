@@ -1,55 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navigation Bar</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fostech Services - Actions</title>
     <link rel="stylesheet" href="styles/style.css" />
-</head>
-<body>
-<div id="content">
-    <header>
-    <nav class="navbar">
-        <div class="nav-container">
+  </head>
+  <body>
+    <div id="content">
+      <header>
+        <nav class="navbar">
+          <div class="nav-container">
             <a href="index.html" id="logo_link">
-                <img src="images/logo.png" alt="Fostech Logo" class="logo">
+              <img src="images/logo.png" alt="Fostech Logo" class="logo" />
             </a>
 
             <ul class="nav-menu" id="navMenu">
-                <li class="nav-item">
-                    <a href="#" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="actions.html" class="nav-link">Actions</a>
-                </li>
-                <li class="nav-item">
-                    <a href="help.html" class="nav-link">Help</a>
-                </li>
+              <li class="nav-item">
+                <a href="index.html" class="nav-link">Home</a>
+              </li>
+              <li class="nav-item">
+                <a href="actions.html" class="nav-link">Actions</a>
+              </li>
+              <li class="nav-item">
+                <a href="help.html" class="nav-link">Help</a>
+              </li>
             </ul>
 
-            <div style="display: flex; align-items: center; gap: 20px;">
-                <a href="#" class="contact-btn">Contact</a>
-                <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+            <div style="display: flex; align-items: center; gap: 20px">
+              <a href="#" class="contact-btn">Contact</a>
+              <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                ☰
+              </button>
             </div>
-        </div>
-    </nav>
-    </header>
-     <div class="left-row-grid">
-          <img src="images/grow2.jpg" alt="key information" class="left-img" />
-          <section class="msg-right">
-          <h2>Discover what you need, <br><br>and what we give to you</h2>
+          </div>
+        </nav>
+      </header>
+      <main class="home-grid">
+        <section class="action-card">
+          <img
+            src="images/discover2.png"
+            alt="Explore Services"
+            class="card-img"
+          />
+          <h2>Explore Services</h2>
           <p>
-            <ul>
-                <li>An smart device or computer</li>
-                <li>Internet Coverage Wifi or Mobile data</li>
-                <li>Access to our website</li>
-                <li>Desire to learn more</li>
-                <li>Desire to earn more</li>
-            </ul>
+            Discover how our services can help you improve profitability and
+            achieve your business goals.
           </p>
-          </section>
-            <div id="rivers-background"></div>
-    </div>
+          <div class="button-box">
+            <a href="#" class="card-btn">Discover</a>
+          </div>
+        </section>
+        <section class="action-card">
+          <img
+            src="images/control-tech2.jpg"
+            alt="Optimize operations"
+            class="card-img"
+          />
+          <h2>Learn the fundamentals</h2>
+          <p>
+            Understand the core principles of technology and how they can be
+            applied to optimize your operations.
+          </p>
+          <div class="button-box">
+            <a href="#" class="card-btn">Learn More</a>
+          </div>
+        </section>
+        <section class="action-card">
+          <img
+            src="images/grow2.jpg"
+            alt="Remain Competitive"
+            class="card-img"
+          />
+          <h2>Reach an expert</h2>
+          <p>
+            Connect with our experts to gain insights and strategies that will
+            help you remain competitive in your industry.
+          </p>
+          <div class="button-box">
+            <a href="#" class="card-btn">Connect</a>
+          </div>
+        </section>
+      </main>
       <footer>
         <p>Fostech &copy; 2025 - Milton Chino</p>
         <p><a href="actions.html">Actions</a></p>
@@ -63,18 +96,18 @@
           </a>
         </div>
       </footer>
-</div>
-</body>
-    <script>
-        function toggleMobileMenu() {
-            const navMenu = document.getElementById('navMenu');
-            navMenu.classList.toggle('active');
-        }
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                document.getElementById('navMenu').classList.remove('active');
-            });
-        });
-    </script>
+    </div>
+  </body>
+  <script>
+    function toggleMobileMenu() {
+      const navMenu = document.getElementById("navMenu");
+      navMenu.classList.toggle("active");
+    }
+    // Close mobile menu when clicking on a link
+    document.querySelectorAll(".nav-link").forEach((link) => {
+      link.addEventListener("click", () => {
+        document.getElementById("navMenu").classList.remove("active");
+      });
+    });
+  </script>
 </html>
