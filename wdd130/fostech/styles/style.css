@@ -212,7 +212,7 @@ h4 {
     text-align: center;
   }
   .button-box {
-    margin-top: 50px;
+    margin-top: 60px;
   }
   .book,
   .join {
@@ -224,6 +224,7 @@ h4 {
     padding: 12px 25px;
     border-radius: 25px;
     transition: all 0.3s ease;
+    margin-top: 10px;
   }
   .book:hover,
   .join:hover {
@@ -343,7 +344,7 @@ h4 {
   }
 }
 
-@media (max-width: 1500px) and (min-width: 769px) {
+@media (max-width: 2200px) and (min-width: 769px) {
   /* HERO section */
   #hero {
     display: grid;
