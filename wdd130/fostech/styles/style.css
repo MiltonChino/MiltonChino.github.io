@@ -193,7 +193,7 @@ textarea {
      By default, text areas have a monospace font */
   font: 1em sans-serif;
   /* Uniform text field size */
-  width: 300px;
+  width: 100%;
   box-sizing: border-box;
   /* Match form field borders */
   border: 1px solid #999;
@@ -419,6 +419,11 @@ button {
     font-size: 18px;
     font-weight: 600;
     padding: 12px 25px;
+  }
+  
+/* Help page style */
+  .FAQs .msg-right {
+    background-color: var(--primary-color);
   }
 }
 
