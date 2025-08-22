@@ -1,0 +1,322 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Light gray to enhance black and white */
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+/* Header */
+header {
+    background-color: #333;
+    color: #fff;
+    padding-top: 20px;
+    min-height: 70px;
+    border-bottom: #77aaff 3px solid; /* A subtle blue for enhancement */
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    height: 50px;
+    width: auto;
+    border-radius: 50%;
+}
+
+header nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+header nav li {
+    display: inline;
+    padding: 0 15px;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+header nav a:hover {
+    color: #77aaff; /* Hover effect for navigation */
+}
+
+/* Hero Section */
+#hero {
+    min-height: 400px;
+    background: #fff;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+}
+
+#hero h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+#hero p {
+    font-size: 1.2em;
+}
+
+/* Projects Section */
+#projects {
+    padding: 40px 0;
+    background-color: #f4f4f4;
+}
+
+#projects h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.project-item {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.project-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.project-item p {
+    font-size: 0.9em;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Contact Section */
+#contact {
+    padding: 40px 0;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+}
+
+#contact h2 {
+    margin-bottom: 30px;
+}
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 0 auto 30px auto;
+}
+
+#contact form input,
+#contact form textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: #555;
+    color: #fff;
+}
+
+#contact form input::placeholder,
+#contact form textarea::placeholder {
+    color: #ccc;
+}
+
+#contact form button {
+    background-color: #77aaff; /* Call to action button color */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+#contact form button:hover {
+    background-color: #5588dd; /* Darker blue on hover */
+}
+
+.social-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1.2em;
+}
+
+.social-links a:hover {
+    color: #77aaff; /* Social links hover effect */
+}
+
+/* Footer */
+footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9em;
+}
+
+/* Comments for potential enhancements */
+/* Animations: */
+/* .project-item { transition: transform 0.3s ease-in-out; } */
+/* .project-item:hover { transform: translateY(-5px); } */
+/* You could add more complex JavaScript animations for elements fading in on scroll, etc. */
+
+/* More complex work: */
+/* Implement a functional contact form backend. */
+/* Add a light/dark mode toggle. */
+/* Create a dynamic project gallery with filtering and larger image views. */
+/* Integrate a blog or news section. */
+/* Add a map to the contact section. */
+
+
+/* Complex Projects Section */
+#complex-projects {
+    padding: 40px 0;
+    background-color: #fff; /* White background for this section */
+    color: #333;
+}
+
+#complex-projects h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.complex-project-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column layout for responsiveness */
+    gap: 40px; /* Increased gap for better separation */
+}
+
+.complex-project-item {
+    display: flex;
+    flex-direction: column; /* Stack image and details on small screens */
+    background: #f9f9f9; /* Slightly off-white for project items */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* More prominent shadow */
+    overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    .complex-project-item {
+        flex-direction: row; /* Side-by-side on larger screens */
+    }
+    .complex-project-item:nth-child(even) {
+        flex-direction: row-reverse; /* Alternate image and text side */
+    }
+}
+
+.complex-project-item .project-image {
+    flex: 1;
+    min-width: 250px; /* Minimum width for image container */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px; /* Space below image on small screens */
+}
+
+@media (min-width: 768px) {
+    .complex-project-item .project-image {
+        margin-bottom: 0;
+        margin-right: 30px; /* Space to the right of image on large screens */
+    }
+    .complex-project-item:nth-child(even) .project-image {
+        margin-right: 0;
+        margin-left: 30px; /* Space to the left of image for alternating layout */
+    }
+}
+
+.complex-project-item .project-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    object-fit: cover; /* Ensure image covers its area */
+}
+
+.complex-project-item .project-details {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.complex-project-item h3 {
+    font-size: 1.8em;
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.complex-project-item h4 {
+    font-size: 1.1em;
+    color: #555;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.complex-project-item p {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.complex-project-item .btn {
+    display: inline-block;
+    background-color: #77aaff; /* Call to action button color */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease; /* Smooth transition for hover */
+}
+
+.complex-project-item .btn:hover {
+    background-color: #5588dd; /* Darker blue on hover */
+}
+
+/* Comments for potential enhancements */
+/* Animations: */
+/* .complex-project-item { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; } */
+/* .complex-project-item.is-visible { opacity: 1; transform: translateY(0); } */
+/* You could add JavaScript to detect when elements are in viewport and add 'is-visible' class for scroll-reveal animations. */
+
+/* More complex work: */
+/* Implement a dynamic loading of projects from a JSON file or API. */
+/* Add a project filtering/sorting mechanism. */
+/* Create dedicated detail pages for each project with more images and information. */
+/* Integrate a carousel or slider for project images. */
