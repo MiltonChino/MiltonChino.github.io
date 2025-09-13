@@ -23,18 +23,21 @@ header {
     min-height: 70px;
     border-bottom: #77aaff 3px solid;
     /* A subtle blue for enhancement */
+    position: relative; /* <-- FIX: Ensure the header is a stacking context */
+    z-index: 9999; /* This will guarantee it's on top of almost everything */
+   
 }
 
-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
 
 header .logo {
     height: 50px;
     width: auto;
     border-radius: 50%;
+}
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 header nav ul {
@@ -44,7 +47,8 @@ header nav ul {
 }
 
 header nav li {
-    display: inline;
+    display: inline-block;
+    position: relative;
     padding: 0 15px;
 }
 
@@ -53,11 +57,53 @@ header nav a {
     text-decoration: none;
     text-transform: uppercase;
     font-size: 16px;
+    /* For hover effect on the entire link area */
+    display: block;
+    padding: 25px 0; 
 }
 
-header nav a:hover {
-    color: #77aaff;
-    /* Hover effect for navigation */
+/* Base styles for the dropdown menu */
+.dropdown-menu {
+    display: none; /* Hide by default */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #444;
+    min-width: 160px;
+    z-index: 1000; /* Ensures it's always on top */
+    list-style: none;
+    padding: 5px 0;
+    border-radius: 5px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-menu li {
+    display: block; /* Stack list items vertically */
+    padding: 0;
+}
+
+.dropdown-menu a {
+    text-transform: capitalize;
+    padding: 12px 16px;
+    display: block;
+}
+
+.dropdown-menu a:hover {
+    background-color: #555;
+}
+
+/* Desktop Styles */
+@media (min-width: 768px) {
+    .dropdown:hover .dropdown-menu {
+        display: block; /* Show menu on hover */
+    }
+}
+
+/* Mobile Styles */
+@media (max-width: 767px) {
+    .dropdown-menu.show {
+        display: block; /* Show menu with JavaScript */
+    }
 }
 
 /* Hero Section */
@@ -96,8 +142,11 @@ header nav a:hover {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
+    max-width: max-content;
+        /* Transiciones con aceleración por hardware */
+    -webkit-transition: max-width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: max-width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
-
 .project-item {
     background: #fff;
     padding: 20px;
@@ -239,7 +288,7 @@ footer {
     overflow: hidden;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 767px) {
     .complex-project-item {
         flex-direction: row;
         /* Side-by-side on larger screens */
@@ -437,4 +486,148 @@ footer {
     background: linear-gradient(135deg, #128c7e, #075e54);
     transform: translateY(-2px);
     box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+
+/* Project Description Container */
+
+.desc-container {
+    max-height: max-content; /* Altura máxima para el contenedor */
+    overflow:auto;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 0 0 6px 6px;
+    padding: 0 5px;
+    /* Transiciones con aceleración por hardware */
+    -webkit-transition: max-height 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: max-height 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Optimizaciones para rendimiento móvil */
+    will-change: max-height;
+    transform: translateZ(0); /* Forzar aceleración por hardware */
+}
+.project-item details {
+            margin-top: 15px;
+            overflow: hidden;
+            /* Asegurar que funcione en dispositivos móvil */
+            -webkit-overflow-scrolling: touch;
+        }
+        .project-item summary {
+            cursor: pointer;
+            padding: 12px 16px; /* Aumentado para mejor touch en móvil */
+            background-color: #77aaff;
+            color: white;
+            border-radius: 6px; /* Ligeramente más redondeado para móvil */
+            font-weight: bold;
+            user-select: none;
+            outline: none;
+            /* Transiciones optimizadas para móvil */
+            -webkit-transition: background-color 0.3s ease, transform 0.1s ease;
+            transition: background-color 0.3s ease, transform 0.1s ease;
+            /* Mejor experiencia táctil */
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+            font-size: 16px; /* Evita zoom en iOS */
+            min-height: 44px; /* Tamaño mínimo recomendado para touch */
+            display: flex;
+            align-items: center;
+        }
+        .project-item summary:hover,
+        .project-item summary:active {
+            background-color: #5588dd;
+        }
+
+        /* Efecto de presión en móvil */
+        .project-item summary:active {
+            transform: scale(0.98);
+        }
+        .project-item details[open] summary {
+            border-radius: 6px 6px 0 0;
+        }
+
+                /* Contenedor para el párrafo con animación - Optimizado para móvil */
+        .project-item .description-container {
+            /* max-height: 0; */
+            overflow: hidden;
+            background-color: #f9f9f9;
+            border-left: 1px solid #ddd;
+            border-right: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+            border-radius: 0 0 6px 6px;
+            padding: 0 5px;
+            /* Transiciones con aceleración por hardware */
+            -webkit-transition: max-height 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: max-height 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+            /* Optimizaciones para rendimiento móvil */
+            will-change: max-height;
+            transform: translateZ(0); /* Forzar aceleración por hardware */
+        }
+.project-item details[open] .description-container {
+            max-height: 2000px; /* Aumentado para textos largos en móvil */
+            -webkit-transition: max-height 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: max-height 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+.project-item details p {
+            margin: 0;
+            padding: 16px; /* Mejor espaciado para móvil */
+            opacity: 0;
+            transform: translateY(-10px);
+            /* Transiciones con aceleración por hardware */
+            -webkit-transition: opacity 0.8s ease 0.3s, -webkit-transform 0.8s ease 0.3s;
+            transition: opacity 0.5s ease 0.3s, transform 0.5s ease 0.3s;
+            /* Optimizaciones para rendimiento móvil */
+            will-change: opacity, transform;
+            transform: translateZ(0) translateY(-10px); /* Forzar aceleración por hardware */
+            /* Mejor legibilidad en móvil */
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        .project-item details[open] p {
+            opacity: 1;
+            transform: translateZ(0) translateY(0);
+            -webkit-transition: opacity 0.8s ease 0.7s, -webkit-transform 0.8s ease 0.7s;
+            transition: opacity 0.5s ease 0.7s, transform 0.5s ease 0.7s;
+        }
+
+/* Estilos para pantallas móviles (hasta 767px) */
+@media (max-width: 797px) {
+    /* Oculta la descripción que siempre está visible */
+    .desc-container {
+        display: none;
+    }
+    
+    /* Muestra el tag details (el cual se colapsa y expande) */
+    details {
+        display: block;
+    }
+    .project-item summary {
+                padding: 14px 18px;
+                font-size: 16px;
+            }
+            
+            .project-item details p {
+                padding: 18px;
+                font-size: 14px;
+                line-height: 1.7;
+            }
+            
+            .project-item .description-container {
+                max-height: 0;
+            }
+            
+            .project-item details[open] .description-container {
+                max-height: 2500px; /* Más altura para pantallas muy pequeñas */
+            }
+}
+
+/* Estilos para pantallas de escritorio (a partir de 798px) */
+@media (min-width: 798px) {
+    /* Muestra la descripción completa */
+    .desc-container {
+        display: block;
+    }
+    
+    /* Oculta el tag details para evitar redundancia */
+    details {
+        display: none;
+    }
 }
