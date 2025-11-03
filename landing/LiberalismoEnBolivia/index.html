@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canal de Liberalismo</title>
+    <style>
+        /* --- Configuración General y Paleta --- */
+        :root {
+            --color-fondo: #f9f9f9;
+            --color-texto: #222222;
+            --color-primario: #0a2342; /* Un azul oscuro, serio */
+            --color-acento: #D4AF37;   /* Un dorado/ocre, para botones y acentos */
+            --fuente-titulos: 'Libre Baskerville', serif;
+            --fuente-cuerpo: 'Lato', sans-serif;
+        }
+
+        body {
+            font-family: var(--fuente-cuerpo);
+            background-color: var(--color-fondo);
+            color: var(--color-texto);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* --- Tipografía --- */
+        h1, h2, h3 {
+            font-family: var(--fuente-titulos);
+            color: var(--color-primario);
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            border-bottom: 2px solid var(--color-acento);
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        a {
+            color: var(--color-primario);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- Encabezado --- */
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .header .subtitulo {
+            font-size: 1.2rem;
+            color: #555;
+            font-style: italic;
+        }
+
+        /* --- Video Principal --- */
+        .video-principal {
+            margin-top: 30px;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border: 1px solid #ddd;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .cta-principal {
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        .boton {
+            background-color: var(--color-acento);
+            color: var(--color-fondo);
+            padding: 12px 25px;
+            border: none;
+            font-family: var(--fuente-cuerpo);
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .boton:hover {
+            background-color: #b89a30; /* Un dorado más oscuro */
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        .boton-secundario {
+            background-color: transparent;
+            color: var(--color-primario);
+            border: 2px solid var(--color-primario);
+        }
+
+        .boton-secundario:hover {
+            background-color: var(--color-primario);
+            color: #fff;
+        }
+
+        /* --- Descripciones y Fuentes --- */
+        .fuentes-seccion {
+            background-color: #fff;
+            padding: 30px;
+            margin-top: 40px;
+            border: 1px solid #eee;
+            border-radius: 4px;
+        }
+
+        .fuentes-seccion h3 {
+            margin-top: 0;
+            color: var(--color-texto);
+        }
+
+        .fuentes-seccion ul {
+            padding-left: 20px;
+            list-style-type: square;
+        }
+
+        /* --- Videos Adicionales --- */
+        .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .video-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .video-card:hover {
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .video-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .video-card-content {
+            padding: 20px;
+        }
+
+        .video-card-content h3 {
+            font-size: 1.2rem;
+            margin-top: 0;
+        }
+
+        /* --- Sección de Citas --- */
+        .citas-seccion {
+            text-align: center;
+            background-color: var(--color-primario);
+            color: var(--color-fondo);
+            padding: 50px 20px;
+            margin-top: 40px;
+        }
+
+        .citas-seccion h2 {
+            color: var(--color-fondo);
+            border-bottom: 2px solid var(--color-acento);
+        }
+
+        /* --- Banner de Anuncios --- */
+        .banner-comunidad {
+            background-color: #fff;
+            border: 2px dashed var(--color-acento);
+            padding: 30px;
+            margin-top: 40px;
+            text-align: center;
+        }
+        
+        .banner-comunidad h2 {
+            border-bottom: none;
+            margin-top: 0;
+        }
+
+        .banner-comunidad p {
+            font-size: 1.1rem;
+        }
+
+        /* --- Footer --- */
+        .footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
+            border-top: 1px solid #ddd;
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+    </style>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <h1>Liberalismo en Bolivia</h1>
+            <p class="subtitulo">Análisis, economía y filosofía desde los principios de la libertad.</p>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="video-principal">
+            <h2>Video Destacado</h2>
+            
+            <div class="video-wrapper">
+                <iframe 
+                    src="https://www.youtube.com/embed/VIDEO_ID" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <div class="cta-principal">
+                <a href="https://www.youtube.com/c/TU_CANAL" target="_blank" class="boton">
+                    Suscríbete en YouTube
+                </a>
+                <a href="#mas-videos" class="boton boton-secundario">
+                    Ver Más Videos
+                </a>
+            </div>
+        </section>
+
+        <section class="fuentes-seccion" id="fuentes">
+            <h3>Descripción y Fuentes del Video Destacado</h3>
+            <p>
+                En este análisis profundizamos en el impacto real de la inflación como un impuesto oculto. A menudo se culpa a los mercados, pero la verdadera raíz del problema se encuentra en la expansión monetaria descontrolada. 
+                Exploramos las ideas de la Escuela Austríaca y comparamos la teoría con los datos empíricos de las últimas dos décadas.
+            </p>
+            <p><strong>Fuentes Citadas en este episodio:</strong></p>
+            <ul>
+                <li>"La Acción Humana" - Ludwig von Mises (Capítulo XX)</li>
+                <li>"Monetary Trends in the United States and the United Kingdom" - Milton Friedman & Anna Schwartz</li>
+                <li>Datos de Inflación: Banco Mundial (1990-2025)</li>
+                <li>Ensayo: "The Pretense of Knowledge" - F.A. Hayek</li>
+            </ul>
+            <p><em>Encuentra las fuentes de todos los videos en sus respectivas descripciones en YouTube.</em></p>
+        </section>
+
+        <section class="videos-adicionales" id="mas-videos">
+            <h2>Videos Adicionales</h2>
+
+            <div class="videos-grid">
+                <div class="video-card">
+                    <img src="https://via.placeholder.com/400x225/0a2342/f9f9f9?text=Miniatura+Video" alt="Miniatura de video sobre impuestos">
+                    <div class="video-card-content">
+                        <h3>¿Es el Impuesto un Robo?</h3>
+                        <p>Un debate filosófico y ético sobre la naturaleza de la tributación y el consentimiento del gobernado.</p>
+                        <a href="#" target="_blank">Ver Video &raquo;</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <img src="https://via.placeholder.com/400x225/0a2342/f9f9f9?text=Miniatura+Video" alt="Miniatura de video sobre mercado libre">
+                    <div class="video-card-content">
+                        <h3>Mitos sobre el Libre Mercado</h3>
+                        <p>Desmontando 5 falacias comunes que se dicen sobre el capitalismo, la competencia y los monopolios.</p>
+                        <a href="#" target="_blank">Ver Video &raquo;</a>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <img src="https://via.placeholder.com/400x225/0a2342/f9f9f9?text=Miniatura+Video" alt="Miniatura de video sobre John Locke">
+                    <div class="video-card-content">
+                        <h3>John Locke y el Derecho a la Propiedad</h3>
+                        <p>Un análisis de los fundamentos del liberalismo clásico y cómo la propiedad privada es esencial para la libertad.</p>
+                        <a href="#" target="_blank">Ver Video &raquo;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="citas-seccion" id="citas">
+            <h2>Agenda una Cita</h2>
+            <p>
+                ¿Interesado en una consultoría sobre economía de libre mercado?
+                <br>¿Quieres organizar un debate de ideas? Este es el espacio.
+            </p>
+            <a href="#" class="boton">
+                Ver Disponibilidad
+            </a>
+        </section>
+
+        <section class="banner-comunidad" id="comunidad">
+            <h2>Anuncios de la Comunidad</h2>
+            <p>
+                <strong>PRÓXIMO EVENTO:</strong> Seminario Web "Bitcoin y la Escuela Austríaca"
+                <br>
+                <strong>Fecha:</strong> 15 de Noviembre, 19:00 (GMT-3)
+                <br>
+                <a href="#">Inscríbete Aquí</a>
+            </p>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>
+            &copy; 2025 [El Nombre de tu Canal] - Las ideas no temen a la discusión.
+        </p>
+        <p>
+            <a href="#">YouTube</a> | <a href="#">Twitter/X</a> | <a href="#">Odysee</a>
+        </p>
+    </footer>
+
+</body>
+</html>
