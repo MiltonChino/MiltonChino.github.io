@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | DrivePro</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        .contact-container {
+            max-width: 800px;
+            margin: 4rem auto;
+            padding: 2rem;
+            background: white;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .required::after {
+            content: " *";
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-top">
+            <div class="header-contact">
+                <span>📞 +591 76208228</span>
+            </div>
+            <div class="header-logo">
+                <a href="index.html">
+                    <img src="logo.png" alt="DrivePro Logo">
+                </a>
+            </div>
+            <div class="header-actions">
+                <span>🛒</span>
+                <a href="#" class="btn btn-glass">Iniciar sesión</a>
+                <span>Español (América Latina) ▾</span>
+                <a href="contact.html" class="btn btn-glass">Contáctenos</a>
+            </div>
+        </div>
+        <nav class="header-bottom">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="services.html">Servicios</a></li>
+                <li><a href="#">Precios</a></li>
+                <li><a href="contact.html" class="active">Contáctenos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" style="min-height: 20vh; padding-bottom: 0;">
+            <h1>Contact us</h1>
+            <p>Contact us about anything related to our company or services. We'll do our best to get back to you as
+                soon as possible.</p>
+        </section>
+
+        <div class="contact-container">
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name" class="required">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                <div class="form-group">
+                    <label for="email" class="required">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="company">Company</label>
+                    <input type="text" id="company" name="company">
+                </div>
+                <div class="form-group">
+                    <label for="subject" class="required">Subject</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="question" class="required">Question</label>
+                    <textarea id="question" name="question" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Submit</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>DrivePro</h3>
+                <p>Soluciones tecnológicas para tu negocio.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>La Paz, Bolivia</p>
+                <p>+591 76208228</p>
+                <p>miltonchinowrk@gmail.com</p>
+            </div>
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <div class="social-links">
+                    <a href="#">LinkedIn</a>
+                    <a href="#">GitHub</a>
+                    <a href="#">WhatsApp</a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2024 DrivePro. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
