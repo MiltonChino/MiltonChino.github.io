@@ -34,77 +34,71 @@ ul {
 }
 
 /* Header */
-header {
+/* Header */
+header.header-main {
   background: linear-gradient(to right, #8783dd, #d25091);
   color: white;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   position: relative;
-  /* Changed from sticky for complex layout, can be sticky if needed */
   z-index: 1000;
-}
-
-.header-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 5%;
-  min-height: 80px;
-}
-
-.header-contact {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 0.9rem;
+  height: 120px;
+  /* Specific height to accommodate larger logo */
 }
 
 .header-logo {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 10px;
+  /* Removed absolute positioning */
+  display: flex;
+  align-items: center;
 }
 
 .header-logo img {
-  height: 60px;
+  height: 90px;
+  /* Increased from 60px (1.5x bigger) */
   background: rgba(255, 255, 255, 0.2);
   border-radius: 8px;
-  /* Optional: giving it a slight card look as per icon style */
   padding: 5px;
+  transition: height 0.3s ease;
+}
+
+.header-nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.header-nav ul {
+  display: flex;
+  gap: 3rem;
+  margin: 0;
+  padding: 0;
+}
+
+.header-nav a {
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  /* Slightly brighter */
+  font-size: 1.1rem;
+  /* Slightly larger text */
+  text-transform: capitalize;
+  padding: 8px 20px;
+  border-radius: 20px;
+  transition: all 0.3s;
+}
+
+.header-nav a:hover,
+.header-nav a.active {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .header-actions {
   display: flex;
   align-items: center;
   gap: 15px;
-  font-size: 0.9rem;
-}
-
-.header-bottom {
-  display: flex;
-  justify-content: center;
-  padding-bottom: 15px;
-}
-
-nav ul {
-  display: flex;
-  gap: 3rem;
-}
-
-nav a {
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 1rem;
-  text-transform: capitalize;
-  position: relative;
-  padding: 5px 15px;
-  border-radius: 20px;
-}
-
-nav a:hover,
-nav a.active {
-  color: white;
-  background-color: rgba(255, 255, 255, 0.2);
 }
 
 /* Override previous button styles for header context if needed, 
