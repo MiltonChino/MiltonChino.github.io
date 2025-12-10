@@ -16,11 +16,27 @@
   padding: 0;
 }
 
+
+/* Close Button inside Mobile Menu */
+.menu-close {
+  display: none;
+  /* Hidden on desktop */
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  line-height: 1;
+}
+
 body {
   font-family: var(--font-family);
   color: var(--text-color);
   line-height: 1.6;
   background-color: var(--bg-white);
+  padding-top: 120px;
+  /* Offset for fixed header */
 }
 
 a {
@@ -33,13 +49,17 @@ ul {
   list-style: none;
 }
 
+
 /* Header */
 /* Header */
 header.header-main {
   background: linear-gradient(to right, #8783dd, #d25091);
   color: white;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   z-index: 1000;
   display: flex;
   justify-content: space-between;
@@ -47,6 +67,13 @@ header.header-main {
   padding: 10px 5%;
   height: 120px;
   /* Specific height to accommodate larger logo */
+  transition: height 0.3s ease, padding 0.3s ease;
+}
+
+header.header-main.scrolled {
+  height: 60px;
+  /* 50% reduced height */
+  padding: 5px 5%;
 }
 
 .header-logo {
@@ -61,7 +88,13 @@ header.header-main {
   background: rgba(255, 255, 255, 0.2);
   border-radius: 8px;
   padding: 5px;
-  transition: height 0.3s ease;
+  transition: height 0.3s ease, padding 0.3s ease;
+}
+
+header.header-main.scrolled .header-logo img {
+  height: 45px;
+  /* 50% reduced logo */
+  padding: 2px;
 }
 
 .header-nav {
@@ -100,6 +133,82 @@ header.header-main {
   align-items: center;
   gap: 15px;
 }
+
+/* Mobile Menu Toggle */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.menu-toggle .bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  /* Shared sidebar styles for nav and actions */
+  .header-nav,
+  .header-actions {
+    position: fixed;
+    right: -100%;
+    width: 60%;
+    background: #d25091;
+    /* Solid fallback */
+    background: linear-gradient(to bottom, #8783dd, #d25091);
+    transition: right 0.3s ease-in-out;
+    flex-direction: column;
+    align-items: center;
+    z-index: 999;
+  }
+
+  .menu-close {
+    display: block;
+  }
+
+  /* Nav sits at the top */
+  .header-nav {
+    top: 0;
+    height: 70vh;
+    padding-top: 100px;
+    /* Space from top */
+    justify-content: flex-start;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Actions sit at the bottom */
+  .header-actions {
+    bottom: 0;
+    height: 30vh;
+    top: 70vh;
+    /* Starts where nav ends */
+    justify-content: center;
+    background: #d25091;
+    /* Darker/Solid for bottom part */
+    gap: 15px;
+  }
+
+  .header-nav.active,
+  .header-actions.active {
+    right: 0;
+  }
+
+  .header-nav ul {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+
 
 /* Override previous button styles for header context if needed, 
    but keeping global btn classes is fine. 
