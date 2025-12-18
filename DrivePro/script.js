@@ -46,4 +46,21 @@ document.addEventListener('DOMContentLoaded', () => {
     if (menuClose) {
         menuClose.addEventListener('click', toggleMenu);
     }
+
+    // Toggle Pricing Features
+    const featureToggles = document.querySelectorAll('.toggle-features');
+    featureToggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
+            const list = toggle.nextElementSibling;
+            if (list && list.classList.contains('features-list')) {
+                list.classList.toggle('visible');
+                // Toggle text symbol
+                if (list.classList.contains('visible')) {
+                    toggle.textContent = toggle.textContent.replace('+', '-');
+                } else {
+                    toggle.textContent = toggle.textContent.replace('-', '+');
+                }
+            }
+        });
+    });
 });
