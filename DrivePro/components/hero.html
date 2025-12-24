@@ -1,0 +1,55 @@
+<!-- components/hero.html -->
+<!-- 
+    Layout: 
+    Desktop: Grid with 2 columns. 
+             Col 1 (Left): 2 Rows (Image 1, Image 2).
+             Col 2 (Right): Text content.
+             Bottom: Full width image (Image 3).
+    Mobile: Single column. Text content with Image 2 (or representative) as background.
+-->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Component</title>
+    <!-- Assuming style.css is in parent ../style.css since we are in components/ -->
+    <link rel="stylesheet" href="../styles/hero.css">
+
+</head>
+
+<body>
+
+    <div class="hero-component">
+        <div class="hero-grid">
+            <!-- Left Column Images (Desktop) -->
+            <div class="hero-images">
+                <div class="hero-img-box">
+                    <!-- Top Image -->
+                    <img src="https://placehold.co/600x400/111/FFF.png?text=City+Bulb" alt="City Innovation">
+                </div>
+                <div class="hero-img-box">
+                    <!-- Bottom Image -->
+                    <img src="https://placehold.co/600x400/222/FFF.png?text=Hand+Tech" alt="Touch Technology">
+                </div>
+            </div>
+
+            <!-- Right Column Text -->
+            <div class="hero-content">
+                <h1>LA ECONOMÍA CAMBIA</h1>
+                <h2>¿CÓMO SEGUIR ADELANTE CON TU NEGOCIO?</h2>
+                <p>Te ayudamos a determinar las medidas que mantendrán tu negocio a flote con ayuda de la tecnología</p>
+                <a href="#" class="btn-hero">Más informacion</a>
+            </div>
+
+            <!-- Bottom Full Width Image -->
+            <div class="hero-bottom">
+                <img src="https://placehold.co/1200x300/333/FFF.png?text=Network" alt="Network Connectivity">
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
