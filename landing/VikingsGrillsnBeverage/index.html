@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vikings Grill & Beverage | La Paz</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* --- Estilos Generales --- */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Georgia', serif;
+            /* Fuente con serifa para toque rústico */
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.3s;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        /* --- Navegación --- */
+        nav {
+            background: #111;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid #8b0000;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo img {
+            max-height: 50px;
+            vertical-align: middle;
+        }
+
+        /* .logo span removed as image is used */
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links li {
+            display: inline-block;
+        }
+
+        .nav-links a {
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        .nav-links a:hover {
+            color: #8b0000;
+        }
+
+        /* --- Hero Section (Portada) --- */
+        .hero {
+            /* Imagen de fondo oscura de parrilla */
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/asado.jfif');
+            background-size: cover;
+            background-position: center;
+            height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            border-bottom: 5px solid #8b0000;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 3px 3px 5px #000;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+            text-shadow: 1px 1px 3px #000;
+        }
+
+        .btn {
+            background: #8b0000;
+            color: #fff;
+            padding: 12px 30px;
+            border: 2px solid #8b0000;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .btn:hover {
+            background: transparent;
+            color: #8b0000;
+        }
+
+        /* --- Estructura de Secciones --- */
+        .section {
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: #8b0000;
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: #fff;
+            margin: 10px auto 0;
+        }
+
+        /* --- NUEVA SECCIÓN: PROMOCIONES --- */
+        .promos {
+            background: #222;
+        }
+
+        .promos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .promo-card {
+            background: #1a1a1a;
+            border: 2px dashed #8b0000;
+            /* Borde punteado estilo cupón */
+            padding: 2rem;
+            position: relative;
+            transition: 0.3s;
+        }
+
+        .promo-card:hover {
+            transform: scale(1.03);
+            background: #252525;
+        }
+
+        .promo-badge {
+            background: #d4af37;
+            /* Dorado */
+            color: #000;
+            padding: 5px 15px;
+            font-weight: bold;
+            font-size: 0.8rem;
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 20px;
+            text-transform: uppercase;
+        }
+
+        .promo-card h3 {
+            color: #fff;
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+
+        .promo-card p {
+            color: #bbb;
+            margin-bottom: 15px;
+        }
+
+        .promo-price {
+            font-size: 1.8rem;
+            color: #8b0000;
+            font-weight: bold;
+            display: block;
+        }
+
+        /* --- Sección Menú --- */
+        .menu {
+            background: #151515;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .menu-item {
+            background: #2a2a2a;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .menu-item .menu-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        /*
+        .menu-item i {
+            font-size: 2rem;
+            color: #8b0000;
+            margin-bottom: 1rem;
+        }
+        */
+
+        .menu-item h3 {
+            color: #fff;
+            margin: 10px 0;
+        }
+
+        .item-desc {
+            font-size: 0.9rem;
+            color: #bbb;
+            margin-bottom: 1rem;
+        }
+
+        /* --- Bebidas --- */
+        .beverages {
+            background: #1a1a1a;
+            border-top: 1px solid #333;
+        }
+
+        .bev-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .bev-item {
+            background: #111;
+            padding: 1.5rem;
+            min-width: 200px;
+            border-left: 4px solid #8b0000;
+            text-align: left;
+        }
+
+        .bev-item h3 {
+            font-size: 1.1rem;
+            margin: 0;
+            color: #fff;
+        }
+
+        .bev-item p {
+            margin: 5px 0 0;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        /* --- Footer / Contacto --- */
+        .footer {
+            background: #0f0f0f;
+            color: #ccc;
+            padding: 4rem 2rem 2rem;
+            border-top: 3px solid #8b0000;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1100px;
+            margin: auto;
+            text-align: left;
+        }
+
+        .footer h3 {
+            color: #fff;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #444;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .footer p {
+            margin-bottom: 10px;
+        }
+
+        .footer i {
+            color: #8b0000;
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+
+        .social-icons a {
+            font-size: 1.5rem;
+            margin-right: 15px;
+            color: #fff;
+            transition: 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #8b0000;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #222;
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        /* --- Responsive Móvil --- */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            /* Menú simplificado para móvil */
+            .footer-grid {
+                text-align: center;
+            }
+
+            .promo-price {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo"><img src="images/logo.png" alt="Vikings Grill"></div>
+        <ul class="nav-links">
+            <li><a href="#promos">Promociones</a></li>
+            <li><a href="#menu">Menú</a></li>
+            <li><a href="#beverages">Bebidas</a></li>
+            <li><a href="#contact">Ubicación</a></li>
+        </ul>
+    </nav>
+
+    <header id="home" class="hero">
+        <h1>Banquete para Vikingos</h1>
+        <p>Hamburguesas Gigantes • Alitas • Cerveza Artesanal</p>
+        <a href="https://wa.me/59169805801" class="btn" target="_blank">
+            <i class="fab fa-whatsapp"></i> Pedir Ahora
+        </a>
+    </header>
+
+    <section id="promos" class="section promos">
+        <div class="container">
+            <h2 class="section-title">Ofertas Legendarias</h2>
+            <div class="promos-grid">
+
+                <div class="promo-card">
+                    <span class="promo-badge">¡Más Popular!</span>
+                    <h3>Combo Vikingo</h3>
+                    <p>Hamburguesa Clásica + Papas Fritas + Soda personal.</p>
+                    <span class="promo-price">35 Bs.</span>
+                </div>
+
+                <div class="promo-card">
+                    <span class="promo-badge">Solo Martes</span>
+                    <h3>2x1 en Alitas</h3>
+                    <p>Compra 6 alitas y llévate 6 más gratis. Sabores BBQ o Picante.</p>
+                    <span class="promo-price">45 Bs.</span>
+                </div>
+
+                <div class="promo-card">
+                    <span class="promo-badge">Happy Hour</span>
+                    <h3>Hora Feliz Vikinga</h3>
+                    <p>2x1 en Cerveza Artesanal Makabra (De 17:00 a 19:00).</p>
+                    <span class="promo-price">30 Bs.</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="menu" class="section menu">
+        <div class="container">
+            <h2 class="section-title">El Festín</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="images/hamburguesa con papas.jfif" alt="La Conquistadora" class="menu-img">
+                    <h3>La Conquistadora</h3>
+                    <p class="item-desc">Doble carne a la parrilla, tocino ahumado, huevo frito, queso cheddar y nuestra
+                        salsa especial.</p>
+                </div>
+                <div class="menu-item">
+                    <img src="images/wings.jfif" alt="Alitas del Valhalla" class="menu-img">
+                    <h3>Alitas del Valhalla</h3>
+                    <p class="item-desc">Crujientes alitas bañadas en salsa Búfalo picante, Miel y Mostaza o BBQ.</p>
+                </div>
+                <div class="menu-item">
+                    <img src="images/costillas de cerdo.jfif" alt="Costillas Ahumadas" class="menu-img">
+                    <h3>Costillas Ahumadas</h3>
+                    <p class="item-desc">Costillas de cerdo tiernas, cocinadas lentamente con leña y glaseadas.</p>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!-- 
+            IMAGES NOT USED:
+            - images/milanesa con papas.jfif (No item in current menu)
+            - images/jugo de sandia.jfif (No specific beverage item listed with image)
+        -->
+    </section>
+
+    <section id="beverages" class="section beverages">
+        <div class="container">
+            <h2 class="section-title">La Taberna</h2>
+            <p style="margin-bottom: 2rem;">Bebidas frías para acompañar tu batalla.</p>
+            <div class="bev-list">
+                <div class="bev-item">
+                    <h3>Cerveza Makabra</h3>
+                    <p>Artesanal Local (Rubia/Negra)</p>
+                </div>
+                <div class="bev-item">
+                    <h3>4 Estaciones</h3>
+                    <p>Cerveza Premium</p>
+                </div>
+                <div class="bev-item">
+                    <h3>Fernet con Coca</h3>
+                    <p>El clásico infaltable</p>
+                </div>
+                <div class="bev-item">
+                    <h3>Gaseosas</h3>
+                    <p>Coca-Cola, Fanta, Sprite</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="footer">
+        <div class="footer-grid">
+            <div>
+                <h3>Ubicación</h3>
+                <p><i class="fas fa-map-marker-alt"></i> San Miguel, Zona Sur</p>
+                <p>Av. Julio Patiño #1488</p>
+                <p>Entre calles 20 y 21</p>
+                <p>La Paz, Bolivia</p>
+            </div>
+
+            <div>
+                <h3>Reservas y Pedidos</h3>
+                <p><i class="fab fa-whatsapp"></i> +591 69805801</p>
+                <p><i class="fas fa-clock"></i> Lun - Dom: 12:00 PM - 11:00 PM</p>
+                <p style="margin-top: 15px;"><a href="https://wa.me/59169805801"
+                        style="color:#8b0000; font-weight:bold;">Enviar mensaje a WhatsApp &rarr;</a></p>
+            </div>
+
+            <div class="social-icons">
+                <h3>Síguenos</h3>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+
+        <div class="copyright">
+            &copy; 2026 Vikings Grill & Beverage. Todos los derechos reservados.
+        </div>
+    </footer>
+
+</body>
+
+</html>
