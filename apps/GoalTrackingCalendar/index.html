@@ -1,0 +1,177 @@
+<p>
+    PLAN
+
+    Project Strategic Plan: Goal Tracker Calendar
+
+    This document outlines the phased implementation of the Goal Tracker WebApp.
+
+    Phase 1: Foundation & UI Architecture (Week 1)
+
+    Milestone 1.1: Project Setup
+
+    Initialize repository.
+
+    Setup Tailwind CSS configuration.
+
+    Define the color palette based on the UI reference.
+
+    Milestone 1.2: Static Layout Construction
+
+    Implement the dual-panel layout (Side Panel + Main Content).
+
+    Create the toggle logic for Side Panel position (Left vs. Right).
+
+    Design the mobile view (Side Panel behavior for small screens).
+
+    Milestone 1.3: Calendar Component (UI Only)
+
+    Build a reusable CSS Grid calendar for a single month.
+
+    Implement the "Month/Year" static header.
+
+    Phase 2: Supabase Integration & Auth (Week 2)
+
+    Milestone 2.1: Supabase Project Setup
+
+    Create Supabase project and define tables (profiles, goals, completions, notes).
+
+    Milestone 2.2: Google Authentication
+
+    Integrate Supabase Auth with Google Provider.
+
+    Implement the Login/Logout flow.
+
+    Milestone 2.3: Data Modeling
+
+    Ensure RLS (Row Level Security) is set so users only see their own goals.
+
+    Phase 3: Goal Management (Week 3)
+
+    Milestone 3.1: Goal Creation
+
+    Build the UI to add a new goal (Title, Description, Color).
+
+    Enforce the 10-goal limit logic.
+
+    Milestone 3.2: Multi-Calendar Rendering
+
+    Dynamically render up to 10 calendars in the main section based on database entries.
+
+    Milestone 3.3: Interactive Marking
+
+    Implement "Click to mark" logic: clicking a day toggles the goal status and updates the database.
+
+    Phase 4: Side Panel Intelligence (Week 4)
+
+    Milestone 4.1: Goal Detail View
+
+    Sync the top of the side panel with the "focused" goal.
+
+    Implement the "Click goal list -> Focus calendar" navigation logic.
+
+    Milestone 4.2: Notes System
+
+    Build the scrollable notes section.
+
+    Add "Note-Date" linking: Highlighting a note highlights the corresponding date on the calendar.
+
+    Phase 5: Navigation & History (Week 5)
+
+    Milestone 5.1: Month/Year Switcher
+
+    Implement the logic to fetch and display data for previous months/years.
+
+    Milestone 5.2: Smooth Scrolling & Focus
+
+    Refine the "Focus on calendar" animation for better UX.
+
+    Phase 6: Refinement & Mobile (Week 6)
+
+    Milestone 6.1: UX/UI Polish
+
+    Add transitions and hover effects.
+
+    Finalize mobile responsiveness.
+
+    Milestone 6.2: Offline Preparations (PWA)
+
+    Initial setup of Manifest and Service Workers for future local installation.
+
+    Phase 7: Future Expansion (Roadmap)
+
+    Milestone 7.1: Statistics Dashboard
+
+    Visualizing success rates and streaks.
+
+    Milestone 7.2: Notifications
+
+    Setup push notifications for daily check-ins.
+
+    Milestone 7.3: Local Storage / Offline Sync
+
+    Optimize for slow connections using Supabase cache/persistence.
+
+    Current Status: [Phase 1.1 - Initializing Project]
+</p>
+
+<p>
+    Readme.md
+    Goal Tracker Calendar
+
+    A specialized web application designed to track personal goals through a visual, color-coded calendar interface.
+    Inspired by habit-tracking visual methodologies.
+
+    Core Features
+
+    Visual Calendars: Up to 10 color-coded calendars stacked vertically.
+
+    Dynamic Side Panel: Customizable position (Left/Right), containing goal summaries and time-linked notes.
+
+    Bi-Directional Highlighting: Selecting a note highlights the day it was written.
+
+    History Navigation: Easily jump between months and years.
+
+    Google Auth: Secure login via Supabase.
+
+    Tech Stack
+
+    Frontend: HTML5, CSS3 (Tailwind CSS), Vanilla JavaScript.
+
+    Backend/Database: Supabase (PostgreSQL).
+
+    Authentication: Supabase Auth (Google OAuth).
+
+    Hosting: Recommended: Vercel/Netlify.
+
+    Implementation Journal
+
+    Day 1: Project Architecture
+
+    Defined the strategic plan in planning.md.
+
+    Established the core UI philosophy: "Minimalist & Data-Driven".
+
+    Decided on Vanilla JS + Supabase to minimize dependency rot and maximize AI readability.
+
+    Project Structure
+
+    /index.html: Main entry point.
+
+    /css/style.css: Tailwind and custom styles.
+
+    /js/app.js: Main application logic.
+
+    /js/auth.js: Supabase Auth handlers.
+
+    /js/db.js: Supabase database operations.
+
+    Deployment
+
+    This app is designed to be hosted on any static site hosting provider.
+
+    Connect GitHub repo to Vercel.
+
+    Add Supabase Environment Variables (SUPABASE_URL, SUPABASE_ANON_KEY).
+
+    Deploy.
+</p>
