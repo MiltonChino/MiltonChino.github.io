@@ -3,6 +3,7 @@ body {
     background-color: #ffff;
     font-size: 20px;
     font-family:'Times New Roman', Times, serif;
+    transition: background-image 1s ease;
 }
 /* Content */
 #content {
