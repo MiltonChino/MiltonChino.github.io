@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* Mobile First */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+    background-color: lightgray;
+    text-align: center;
+}
+
+header,
+footer {
+    width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+    background-color: #3b82f6;
+    color: white;
+    box-sizing: border-box;
+}
+
+header {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-items: center;
+    gap: 10px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+.menu-btn {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 1.2rem;
+    padding: 5px;
+}
+
+nav {
+    display: none;
+    gap: 10px;
+    justify-content: center;
+    width: 100%;
+}
+
+nav a {
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+main h1 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+#cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 25px;
+}
+
+.card {
+    width: 300px;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+}
+
+.card img {
+    /* display: block; */
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+section {
+    padding: 20px;
+    background-color: white;
+    margin: 1em;
+    border: 1px solid #ccc;
+}
+
+/* Tablet */
+@media screen and (min-width: 700px) {
+    #cards {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Desktop */
+@media screen and (min-width: 1000px) {
+    #cards {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .menu-btn {
+        display: none;
+    }
+
+    nav {
+        display: flex;
+    }
+}
