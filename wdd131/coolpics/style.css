@@ -140,6 +140,10 @@ section {
     grid-template-columns: 1fr 1fr;
   }
 
+  dialog img {
+    width: 75%;
+    margin: 12vh auto;
+  }
 }
 
 /* Desktop */
@@ -163,7 +167,7 @@ section {
 
   dialog img {
     width: 60%;
-    margin: 15vh auto;
+    margin: 5vh auto;
   }
 
   .close-viewer {
