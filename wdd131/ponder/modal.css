@@ -36,6 +36,7 @@ dialog {
   font-size: 1.5em;
 }
 
+/* Important to prevent scrolling behind the modal */
 body:has(dialog[open]) {
   overflow: hidden;
 }

@@ -2,123 +2,180 @@
 
 /* Mobile First */
 body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Roboto, sans-serif;
-    background-color: lightgray;
-    text-align: center;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Roboto, sans-serif;
+  background-color: lightgray;
+  text-align: center;
 }
 
 header,
 footer {
-    width: 100%;
-    margin: 0 auto;
-    padding: 1rem;
-    background-color: #3b82f6;
-    color: white;
-    box-sizing: border-box;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+  background-color: #3b82f6;
+  color: white;
+  box-sizing: border-box;
 }
 
 header {
-    display: grid;
-    grid-template-columns: 1fr;
-    align-items: center;
-    justify-items: center;
-    gap: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-items: center;
+  gap: 10px;
 }
 
 header h1 {
-    margin: 0;
+  margin: 0;
 }
 
 .menu-btn {
-    cursor: pointer;
-    border: none;
-    background-color: transparent;
-    color: white;
-    font-size: 1.2rem;
-    padding: 5px;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  color: white;
+  font-size: 1.2rem;
+  padding: 5px;
 }
 
 nav {
-    display: none;
-    gap: 10px;
-    justify-content: center;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  width: 100%;
 }
 
 nav a {
-    padding: 10px;
-    color: white;
-    text-decoration: none;
-    font-size: 1rem;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  border-top: 1px solid gray;
+}
+
+.hide {
+  display: none;
 }
 
 nav a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 main {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 main h1 {
-    text-align: center;
-    margin-top: 0;
-    margin-bottom: 20px;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 20px;
 }
 
-#cards {
-    display: grid;
-    grid-template-columns: 1fr;
-    justify-items: center;
-    gap: 25px;
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  gap: 25px;
 }
 
 .card {
-    width: 300px;
-    padding: 10px;
-    background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    box-sizing: border-box;
+  width: 300px;
+  padding: 10px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
 }
 
 .card img {
-    /* display: block; */
-    width: 100%;
-    height: auto;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
+  /* display: block; */
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+dialog img {
+  width: 90%;
+  display: block;
+  margin: 20vh auto;
+}
+
+dialog {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.close-viewer {
+  position: absolute;
+  top: 10vh;
+  right: 2vh;
+  padding: 3px 6px;
+  font-size: 1.5em;
+}
+
+body:has(dialog[open]) {
+  overflow: hidden;
 }
 
 section {
-    padding: 20px;
-    background-color: white;
-    margin: 1em;
-    border: 1px solid #ccc;
+  padding: 20px;
+  background-color: white;
+  margin: 1em;
+  border: 1px solid #ccc;
 }
 
 /* Tablet */
 @media screen and (min-width: 700px) {
-    #cards {
-        grid-template-columns: 1fr 1fr;
-    }
+  .gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+
 }
 
 /* Desktop */
 @media screen and (min-width: 1000px) {
-    #cards {
-        grid-template-columns: 1fr 1fr 1fr;
-    }
+  .gallery {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 
-    .menu-btn {
-        display: none;
-    }
+  .menu-btn {
+    display: none;
+  }
 
-    nav {
-        display: flex;
-    }
+  .hide {
+    display: block;
+  }
+
+  nav a {
+    display: inline;
+    border-top: none;
+  }
+
+  dialog img {
+    width: 60%;
+    margin: 15vh auto;
+  }
+
+  .close-viewer {
+    position: absolute;
+    right: 15vh;
+  }
+
+  /* .viewer {
+    margin: 50px;
+    padding: 50px;
+  }
+  .viewer img {
+    max-width: 800px;
+  } */
 }
