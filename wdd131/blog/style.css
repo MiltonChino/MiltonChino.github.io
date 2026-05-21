@@ -1,0 +1,106 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header,
+footer {
+    background-color: #fff;
+    color: #000;
+    padding-top: 0.5rem;
+    text-align: center;
+    /* margin-bottom: 1rem;
+    box-sizing: border-box; */
+}
+
+.main-nav {
+    list-style: none;
+    padding: 0;
+    border-top: 3px solid #f3d7b9;
+    border-bottom: 3px solid #f3d7b9;
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    justify-content: right;  
+    margin-bottom: 50px;  
+}
+
+.main-nav li {
+    padding: 8px;
+    font-weight: bold;  
+}
+
+.main-nav a {
+    color: #a10320;
+    text-decoration: none;
+}
+
+#book-list {
+    padding: 0px 2rem;
+    border-top: 3px solid #f3d7b9;
+    border-bottom: 3px solid #f3d7b9;
+}
+
+.book {
+    padding: 1rem;
+    max-width: 700px;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: 1fr 180px;
+    grid-template-rows: 1fr auto auto 1fr;
+    /* grid-template-areas:
+        "title meta"
+        "image meta"
+        "desc desc"; */
+    gap: 1rem;
+    align-items: start;
+}
+
+.book h2 {
+    color: #a10320;
+    font-size: 1.5rem;
+    margin: 0;
+    grid-column: 1/2;
+    grid-row: 3/4;
+}
+
+/* Metadata paragraphs (date, age, genre, rating) */
+.book p:not(#desc) {
+    margin: 0 0 0.5rem 0;
+    padding-left: 0;
+    grid-column: 2/3;
+    grid-row: 1/3;
+}
+
+.book img {
+    max-width: 100%;
+    display: block;
+    border-radius: 8px;
+    margin: 0 auto;
+    grid-column: 1/2;
+    grid-row: 4/6;
+}
+
+#desc {
+    grid-column: 1/2;
+    grid-row: 6/7;
+    margin-top: 0.5rem;
+}
+
+
+@media (min-width: 600px) {
+    .main-nav {
+        display: grid;
+        grid-template-columns: 100px 100px 100px;
+    }
+
+    .book {
+        grid-template-columns: 1fr 200px;
+    }
+
+    /* keep metadata at the top of the right column */
+    .book p:not(#desc) {
+        text-align: left;
+    }
+}
