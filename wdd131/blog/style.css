@@ -71,6 +71,7 @@ footer {
 
 .book .desc {
     margin-top: 0.5rem;
+    padding: 0 40px;
 }
 
 
@@ -83,7 +84,6 @@ footer {
         border-top: none;
         display: grid;
         grid-template-columns: 1fr 2fr;
-        gap: 1rem;
     }
     .book .meta {
         border-right: 3px solid #f3d7b9;
