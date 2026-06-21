@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+
+/* Global Reset and Styles */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333333;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* App Container */
+.app-container {
+    width: 100%;
+    max-width: 440px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header & Branding */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0 20px 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-img {
+    height: 55px;
+    width: auto;
+}
+
+.logo-text {
+    font-family: 'Amatic SC', cursive;
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: #000000;
+    letter-spacing: 1px;
+    line-height: 1;
+}
+
+/* Search Form */
+.search-form {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.search-container {
+    display: flex;
+    align-items: stretch;
+    border: 1.5px solid #000000;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+
+.search-container input {
+    flex: 1;
+    border: none;
+    padding: 10px 12px;
+    font-size: 1.05rem;
+    outline: none;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333333;
+}
+
+.search-container input::placeholder {
+    color: #777777;
+}
+
+.search-btn {
+    border: none;
+    border-left: 1.5px solid #000000;
+    background: none;
+    padding: 0 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
+}
+
+.search-btn:hover {
+    background-color: #f5f5f5;
+}
+
+.search-btn img {
+    width: 22px;
+    height: 22px;
+}
+
+/* Divider */
+.divider {
+    border: none;
+    border-top: 1.5px solid #cccccc;
+    margin: 15px 0 25px 0;
+    width: 100%;
+}
+
+/* Recipe Card */
+.recipe-card {
+    border: 1.5px solid #000000;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    margin-bottom: 25px;
+}
+
+.recipe-img-container {
+    width: 100%;
+}
+
+.recipe-img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    display: block;
+    object-fit: cover;
+}
+
+.recipe-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.recipe-badge {
+    align-self: flex-start;
+    border: 1.5px solid #000000;
+    border-radius: 4px;
+    padding: 2px 8px;
+    font-size: 0.85rem;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f9f9f9;
+    color: #000000;
+}
+
+.recipe-title {
+    font-family: 'Amatic SC', cursive;
+    color: #1b75bb;
+    font-size: 2.5rem;
+    margin: 0;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    line-height: 1.1;
+}
+
+.recipe-rating {
+    font-size: 1.3rem;
+    display: flex;
+    gap: 3px;
+}
+
+.recipe-rating .star {
+    line-height: 1;
+}
+
+.recipe-rating .star.filled {
+    color: #ffb800; /* Warm golden-yellow */
+}
+
+.recipe-rating .star.empty {
+    color: #000000; /* Outline star */
+}
+
+.recipe-desc {
+    display: none; /* Hidden on mobile */
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333333;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin: 5px 0 0 0;
+}
+
+/* Footer Styling */
+footer {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 0;
+    width: 100%;
+}
+
+.footer-attribution {
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+.footer-attribution a {
+    color: #0000ee;
+    text-decoration: underline;
+    transition: color 0.2s ease;
+}
+
+.footer-attribution a:hover {
+    color: #0000aa;
+}
+
+.footer-social {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+.footer-social a {
+    display: inline-block;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.footer-social a:hover {
+    transform: translateY(-2px);
+    opacity: 0.8;
+}
+
+.footer-social img {
+    width: 32px;
+    height: 32px;
+    display: block;
+}
+
+/* Desktop / Larger Device Media Query */
+@media (min-width: 768px) {
+    .app-container {
+        max-width: 850px;
+        padding: 30px;
+    }
+
+    header {
+        padding: 10px 0 25px 0;
+    }
+
+    .logo-img {
+        height: 70px;
+    }
+
+    .logo-text {
+        font-size: 4rem;
+    }
+
+    .recipe-card {
+        flex-direction: row;
+        align-items: center;
+        gap: 25px;
+        padding: 25px;
+    }
+
+    .recipe-img-container {
+        flex: 1.1;
+        max-width: 50%;
+    }
+
+    .recipe-info {
+        flex: 1.2;
+        gap: 12px;
+    }
+
+    .recipe-title {
+        font-size: 3.2rem;
+    }
+
+    .recipe-desc {
+        display: block; /* Shown on desktop */
+    }
+
+    footer {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 15px;
+    }
+
+    .footer-attribution {
+        text-align: left;
+    }
+}
