@@ -10,27 +10,27 @@
 
     <!-- Open Graph (Facebook, LinkedIn, etc.) -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Your Title">
-    <meta property="og:description" content="Your Description">
-    <meta property="og:url" content="Your URL">
-    <meta property="og:image" content="social-preview-image.png">
+    <meta property="og:title" content="RecipeBook">
+    <meta property="og:description" content="A collection of delicious recipes">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="recipe-book.png">
 
     <!-- X Card -->
     <meta name="twitter:card" content="Social Preview Image">
-    <meta name="twitter:title" content="Your Title">
-    <meta name="twitter:description" content="Your Description">
-    <meta name="twitter:image" content="social-preview-image.png">
+    <meta name="twitter:title" content="RecipeBook">
+    <meta name="twitter:description" content="A collection of delicious recipes">
+    <meta name="twitter:image" content="recipe-book.png">
 
     <!-- One favicon (ICO works everywhere) -->
-    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" href="./images/favicon.ico">
 
     <!-- One Apple Touch Icon (iOS home screen) -->
-    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" href="./images/apple-touch-icon.png">
 
 
     <title>Recipes</title>
     <link rel="stylesheet" href="style.css">
-
+    <script src="main.js" defer></script>
 </head>
 
 <body>
@@ -43,35 +43,18 @@
         </header>
 
         <main>
-            <form class="search-form" action="#">
+            <form class="search-form" action="#" id="search-form">
                 <div class="search-container">
                     <input type="text" name="search" placeholder="Find a recipe" aria-label="Search recipes">
-                    <button type="submit" class="search-btn">
+                    <button type="submit" class="search-btn" id="search">
                         <img src="search.svg" alt="Search Icon">
                     </button>
                 </div>
             </form>
 
             <hr class="divider">
-
-            <section class="recipe-card">
-                <div class="recipe-img-container">
-                    <img src="apple-crisp.jpg" alt="Apple Crisp" class="recipe-img">
-                </div>
-                <div class="recipe-info">
-                    <span class="recipe-badge">dessert</span>
-                    <h2 class="recipe-title">APPLE CRISP</h2>
-                    <div class="recipe-rating" role="img" aria-label="Rating: 4 out of 5 stars">
-                        <span aria-hidden="true" class="star filled">★</span>
-                        <span aria-hidden="true" class="star filled">★</span>
-                        <span aria-hidden="true" class="star filled">★</span>
-                        <span aria-hidden="true" class="star filled">★</span>
-                        <span aria-hidden="true" class="star empty">☆</span>
-                    </div>
-                    <p class="recipe-desc">This apple crisp recipe is a simple yet delicious fall dessert that's great
-                        served warm with vanilla ice cream.</p>
-                </div>
-            </section>
+            <div id="recipe-container">
+            </div>
         </main>
 
         <footer>
