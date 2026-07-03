@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en-us" data-jetski-tab-id="error">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Application Plan">
+    <meta name="author" content="Milton Chino">
+    <title>App Plan</title>
+    <link type="text/css" rel="stylesheet" href="app-plan.css">
+</head>
+
+<body data-new-gr-c-s-check-loaded="14.1307.0" data-gr-ext-installed="">
+    <header>
+        <h1>Apex Software Consulting Site Plan</h1>
+        <h2>Milton Chino</h2>
+        <h2>WDD 131-A2</h2>
+        <!-- In the header above, add the name or your site, your name and class number. For example if you are in section 3 you would put WDD 131.03 -->
+    </header>
+    <main>
+        <!-- ------------------------Steps 2-3------------------------------ -->
+        <hr>
+        <h2>Overview</h2>
+        <h3>Purpose</h3>
+        <p>The purpose of this site is to showcase the consulting team's software development capabilities, demonstrate
+            past success, and generate high-intent leads. By offering a direct portfolio landing page and an interactive
+            project cost estimator, potential clients can immediately evaluate the agency's work, calculate their
+            potential investment, and easily request a consultation.</p>
+
+        <h3>Audience</h3>
+        <p>The target audience consists of founders, startups, small-to-medium business owners, and product managers who
+            are looking for professional, high-quality custom software development services. They value transparent
+            pricing, proven experience, and clean design, and they want a friction-free way to inquire about development
+            estimates.</p>
+
+        <h3>Dynamic elements</h3>
+        <p>The website will feature the following dynamic JavaScript behaviors:</p>
+        <ul>
+            <li><strong>Portfolio Search &amp; Filter:</strong> Real-time filtering of past projects by title,
+                description keywords, and category tags ("All", "Web Apps", "Mobile Apps", "E-commerce") using
+                <code>Array.prototype.filter()</code> to instantly update the DOM.
+            </li>
+            <li><strong>Project Detail Modal:</strong> Clicking any project card triggers a popup modal detailing the
+                project's background, technologies, and client testimonials, powered by event listeners and dynamic DOM
+                insertion.</li>
+            <li><strong>Live Cost Estimator:</strong> A checkboxes form that updates the total estimated price
+                dynamically on-screen as items are selected, powered by event listeners and pricing lookup objects.</li>
+            <li><strong>Consultation Submission:</strong> Form validation for user contact info, which stores the
+                customized project requirements and estimated costs into <code>localStorage</code>, displaying a
+                confirmation success message upon submission.</li>
+        </ul>
+
+        <hr>
+        <h2>Branding</h2>
+        <h3>Website Logo</h3>
+        <img src="logo.svg" alt="Apex Software Consulting Logo">
+        <hr>
+        <h2>Style Guide</h2>
+
+        <!-- ------------------------Steps 4-8------------------------------ -->
+
+        <h3>Color Palette</h3>
+        Palette URL:
+        <a href="https://coolors.co/0f172a-f8fafc-10b981-e2e8f0"
+            target="_blank">https://coolors.co/0f172a-f8fafc-10b981-e2e8f0</a>
+
+        <table class="colors">
+            <tbody>
+                <tr>
+                    <th>Primary</th>
+                    <th>Secondary</th>
+                    <th>Accent 1</th>
+                    <th>Accent 2</th>
+                </tr>
+                <tr>
+                    <td class="primary">#0F172A</td>
+                    <td class="secondary">#F8FAFC</td>
+                    <td class="accent1">#10B981</td>
+                    <td class="accent2">#E2E8F0</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- ------------------------Pseudo Code------------------------------ -->
+
+        <h2>Pseudo Code</h2>
+
+        <h3>Page 1: Portfolio Showcase (index.html)</h3>
+        <ol>
+            <li>Define an array of objects (
+                <code>const projects = [...]</code>) containing mock portfolio project data (id, title, category, image,
+                description, tech stack, testimonial).
+            </li>
+            <li>Implement a function <code>displayProjects(projectList)</code>
+                that maps over the array, constructs template literals for each card, and injects them into the DOM
+                project-grid container.</li>
+            <li>Implement a function <code>filterProjects(category)</code> that
+                triggers on filter button clicks, filters the project array using <code>projects.filter()</code>, and
+                updates the display grid.</li>
+            <li>Implement a function <code>searchProjects(query)</code> that triggers
+                on search input change/keyup, filters matches in title or description, and re-renders the grid.</li>
+            <li>Implement functions <code>openModal(projectId)</code> and
+                <code>closeModal()</code> to toggle the modal overlay and dynamically load full details of the clicked
+                project from the projects array.
+            </li>
+        </ol>
+
+        <h3>Page 2: Interactive Estimator (estimator.html)</h3>
+        <ol>
+            <li>Define an object containing the prices of services
+                (<code>const prices = { uiux: 1500, auth: 1000, ecommerce: 2000, dashboard: 2500, mobile: 3500 }</code>).
+            </li>
+            <li>Implement a function <code>calculateTotal()</code> that gathers
+                all checked feature inputs, retrieves their cost values, sums them, and updates the total estimate
+                display panel.</li>
+            <li>Add change event listeners to
+                recalculate the estimate instantly whenever features are toggled.</li>
+            <li>Implement a function <code>submitConsultation(event)</code>
+                that validates inputs (Name, Email), retrieves the calculated estimate and
+                selected items, saves this data into <code>localStorage</code>, and displays a success notification.
+            </li>
+        </ol>
+        <h2>Wireframes</h2>
+        <p>
+            Create two wireframes for your site. One for each page and list them
+            here
+        </p>
+
+        <h3>Portfolio (Home Page) Wireframe</h3>
+        <img src="wireframe-portfolio.svg" alt="Portfolio showcase wireframe">
+
+        <h3>Estimator (Page 2) Wireframe</h3>
+        <img src="wireframe-estimator.svg" alt="Interactive cost estimator wireframe">
+    </main>
+</body>
+
+</html>

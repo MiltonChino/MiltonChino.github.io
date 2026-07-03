@@ -1,0 +1,83 @@
+<svg width="800" height="700" viewBox="0 0 800 700" xmlns="http://www.w3.org/2000/svg">
+  <!-- Styles -->
+  <style>
+    .frame { fill: #F8FAFC; stroke: #0F172A; stroke-width: 2; }
+    .box { fill: #FFFFFF; stroke: #0F172A; stroke-width: 1.5; }
+    .image-placeholder { fill: #FFFFFF; stroke: #64748B; stroke-width: 1.5; }
+    .image-x { stroke: #64748B; stroke-width: 1.5; }
+    .text-title { font-family: 'Inter', monospace, Courier, sans-serif; font-size: 18px; font-weight: bold; fill: #0F172A; }
+    .text-large { font-family: 'Inter', monospace, Courier, sans-serif; font-size: 24px; font-weight: bold; fill: #0F172A; }
+    .text-body { font-family: 'Inter', monospace, Courier, sans-serif; font-size: 14px; fill: #0F172A; }
+    .btn { fill: #FFFFFF; stroke: #0F172A; stroke-width: 1.5; rx: 3px; }
+    .checkbox { fill: #FFFFFF; stroke: #0F172A; stroke-width: 1.5; }
+    .checkmark { stroke: #0F172A; stroke-width: 2; fill: none; }
+  </style>
+  
+  <!-- Outer Window Frame -->
+  <rect x="10" y="10" width="780" height="680" rx="10" class="frame" />
+  
+  <!-- Header Bar -->
+  <line x1="10" y1="70" x2="790" y2="70" stroke="#0F172A" stroke-width="2" />
+  
+  <!-- Logo Placeholder -->
+  <rect x="30" y="25" width="30" height="30" class="image-placeholder" />
+  <line x1="30" y1="25" x2="60" y2="55" class="image-x" />
+  <line x1="60" y1="25" x2="30" y2="55" class="image-x" />
+  <text x="70" y="46" class="text-title">LOGO</text>
+  
+  <!-- Nav links -->
+  <text x="560" y="46" class="text-body" text-anchor="end">Portfolio</text>
+  <text x="580" y="46" class="text-body">|</text>
+  <text x="610" y="46" class="text-body">Estimator</text>
+  
+  <!-- Main Title -->
+  <text x="30" y="115" class="text-title">Project Cost Estimator</text>
+  
+  <!-- Estimator Content (Left: Features, Right: Estimate Box) -->
+  <text x="30" y="155" class="text-title">Select Features:</text>
+  
+  <!-- Checkbox 1 (Checked) -->
+  <rect x="30" y="175" width="20" height="20" class="checkbox" />
+  <path d="M33 185 L37 190 L47 178" class="checkmark" />
+  <text x="65" y="190" class="text-body">UI/UX Design</text>
+  
+  <!-- Checkbox 2 (Unchecked) -->
+  <rect x="30" y="210" width="20" height="20" class="checkbox" />
+  <text x="65" y="225" class="text-body">User Login / Auth</text>
+  
+  <!-- Checkbox 3 (Checked) -->
+  <rect x="30" y="245" width="20" height="20" class="checkbox" />
+  <path d="M33 255 L37 260 L47 248" class="checkmark" />
+  <text x="65" y="260" class="text-body">E-commerce / Payments</text>
+  
+  <!-- Checkbox 4 (Unchecked) -->
+  <rect x="30" y="280" width="20" height="20" class="checkbox" />
+  <text x="65" y="295" class="text-body">Admin Dashboard</text>
+  
+  <!-- Checkbox 5 (Unchecked) -->
+  <rect x="30" y="315" width="20" height="20" class="checkbox" />
+  <text x="65" y="330" class="text-body">Mobile App Version</text>
+  
+  <!-- Estimate Box (Right) -->
+  <rect x="520" y="165" width="240" height="170" class="box" />
+  <text x="545" y="205" class="text-body">ESTIMATE:</text>
+  <text x="545" y="265" class="text-large">$ 4,500</text>
+  
+  <!-- Divider -->
+  <line x1="30" y1="375" x2="770" y2="375" stroke="#0F172A" stroke-width="1.5" />
+  
+  <!-- Raffle/Consultation Section -->
+  <text x="30" y="415" class="text-title">Enter Raffle for Free Consultation:</text>
+  
+  <!-- Form Field: Name -->
+  <text x="30" y="455" class="text-body">Name:</text>
+  <rect x="110" y="437" width="300" height="25" class="box" />
+  
+  <!-- Form Field: Email -->
+  <text x="30" y="495" class="text-body">Email:</text>
+  <rect x="110" y="477" width="300" height="25" class="box" />
+  
+  <!-- Submit Button (Centered) -->
+  <rect x="220" y="555" width="360" height="45" class="btn" />
+  <text x="400" y="583" class="text-title" text-anchor="middle">Submit Estimate &amp; Enter</text>
+</svg>
