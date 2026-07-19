@@ -4,13 +4,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Calculate custom software development estimates instantly. Choose your features, see the real-time cost, and submit for a consultation.">
+    <meta name="description"
+        content="Calculate custom software development estimates instantly. Choose your features, see the real-time cost, and submit for a consultation.">
     <meta name="author" content="Milton Chino">
     <title>Apex Software Consulting - Project Cost Estimator</title>
     <!-- Google Font: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <!-- Local Stylesheet -->
     <link type="text/css" rel="stylesheet" href="styles.css">
     <!-- Estimator JavaScript (Deferred) -->
@@ -37,7 +39,8 @@
         <section class="hero">
             <div class="hero-content">
                 <h1>Project Cost Estimator</h1>
-                <p>Select your requirements to see an instant price projection. Submit your configuration to request a free consultation and enter our raffle.</p>
+                <p>Select your requirements to see an instant price projection. Submit your configuration to request a
+                    free consultation and enter our raffle.</p>
             </div>
         </section>
 
@@ -46,15 +49,16 @@
             <div class="estimator-wrapper">
                 <form id="estimator-form" novalidate>
                     <div class="estimator-grid">
-                        
+
                         <!-- Left Panel: Configurations & Inputs -->
                         <div class="estimator-inputs">
-                            
+
                             <!-- Features Checkboxes Card -->
                             <div class="estimator-card">
                                 <h2>Select Project Features</h2>
-                                <p class="card-subtitle">Choose the individual modules and design options your application requires:</p>
-                                
+                                <p class="card-subtitle">Choose the individual modules and design options your
+                                    application requires:</p>
+
                                 <div class="features-list">
                                     <!-- UI/UX -->
                                     <label class="feature-item" for="feat-uiux">
@@ -67,7 +71,8 @@
                                                 <span class="feature-name">UI/UX Design</span>
                                                 <span class="feature-price">+$1,500</span>
                                             </div>
-                                            <p class="feature-desc">Wireframes, responsive layouts, high-fidelity prototypes, and sleek modern aesthetic branding.</p>
+                                            <p class="feature-desc">Wireframes, responsive layouts, high-fidelity
+                                                prototypes, and sleek modern aesthetic branding.</p>
                                         </div>
                                     </label>
 
@@ -82,14 +87,16 @@
                                                 <span class="feature-name">User Login &amp; Authentication</span>
                                                 <span class="feature-price">+$1,000</span>
                                             </div>
-                                            <p class="feature-desc">Secure credentials hashing, session management, Google/social login integration, and password resets.</p>
+                                            <p class="feature-desc">Secure credentials hashing, session management,
+                                                Google/social login integration, and password resets.</p>
                                         </div>
                                     </label>
 
                                     <!-- E-commerce -->
                                     <label class="feature-item" for="feat-ecommerce">
                                         <div class="feature-checkbox-container">
-                                            <input type="checkbox" id="feat-ecommerce" name="features" value="ecommerce">
+                                            <input type="checkbox" id="feat-ecommerce" name="features"
+                                                value="ecommerce">
                                             <span class="checkbox-custom"></span>
                                         </div>
                                         <div class="feature-details">
@@ -97,14 +104,16 @@
                                                 <span class="feature-name">E-commerce Integration &amp; Payments</span>
                                                 <span class="feature-price">+$2,000</span>
                                             </div>
-                                            <p class="feature-desc">Shopping cart workflows, Stripe checkout integration, subscription tiering, and digital invoices generation.</p>
+                                            <p class="feature-desc">Shopping cart workflows, Stripe checkout
+                                                integration, subscription tiering, and digital invoices generation.</p>
                                         </div>
                                     </label>
 
                                     <!-- Dashboard -->
                                     <label class="feature-item" for="feat-dashboard">
                                         <div class="feature-checkbox-container">
-                                            <input type="checkbox" id="feat-dashboard" name="features" value="dashboard">
+                                            <input type="checkbox" id="feat-dashboard" name="features"
+                                                value="dashboard">
                                             <span class="checkbox-custom"></span>
                                         </div>
                                         <div class="feature-details">
@@ -112,7 +121,8 @@
                                                 <span class="feature-name">Analytics &amp; Admin Dashboard</span>
                                                 <span class="feature-price">+$2,500</span>
                                             </div>
-                                            <p class="feature-desc">Admin dashboards, real-time charting visualizations, content management system, and reporting data exports.</p>
+                                            <p class="feature-desc">Admin dashboards, real-time charting visualizations,
+                                                content management system, and reporting data exports.</p>
                                         </div>
                                     </label>
 
@@ -127,7 +137,8 @@
                                                 <span class="feature-name">Mobile Companion App</span>
                                                 <span class="feature-price">+$3,500</span>
                                             </div>
-                                            <p class="feature-desc">Cross-platform companion mobile application targeting Apple iOS and Android App Store releases.</p>
+                                            <p class="feature-desc">Cross-platform companion mobile application
+                                                targeting Apple iOS and Android App Store releases.</p>
                                         </div>
                                     </label>
                                 </div>
@@ -136,18 +147,23 @@
                             <!-- User Info Form Card -->
                             <div class="estimator-card">
                                 <h2>Enter Raffle for Free Consultation</h2>
-                                <p class="card-subtitle">Complete the fields below to send your estimate and secure a free strategic consultation entry:</p>
-                                
+                                <p class="card-subtitle">Complete the fields below to send your estimate and secure a
+                                    free strategic consultation entry:</p>
+
                                 <div class="form-inputs">
                                     <div class="form-group">
-                                        <label for="client-name">Full Name <span class="required-indicator">*</span></label>
-                                        <input type="text" id="client-name" placeholder="Milton Chino" required>
+                                        <label for="client-name">Full Name <span
+                                                class="required-indicator">*</span></label>
+                                        <input type="text" id="client-name" placeholder="Enter your full name" required>
                                         <span class="validation-message" id="name-error">Full name is required.</span>
                                     </div>
                                     <div class="form-group">
-                                        <label for="client-email">Email Address <span class="required-indicator">*</span></label>
-                                        <input type="email" id="client-email" placeholder="chino.milton@example.com" required>
-                                        <span class="validation-message" id="email-error">Please enter a valid email address.</span>
+                                        <label for="client-email">Email Address <span
+                                                class="required-indicator">*</span></label>
+                                        <input type="email" id="client-email" placeholder="Enter your email address"
+                                            required>
+                                        <span class="validation-message" id="email-error">Please enter a valid email
+                                            address.</span>
                                     </div>
                                 </div>
                             </div>
@@ -159,18 +175,19 @@
                                 <h3>Estimate Breakdown</h3>
                                 <p class="summary-subtitle">Live compilation of project metrics</p>
                                 <hr class="summary-divider">
-                                
+
                                 <div class="summary-breakdown-list" id="summary-breakdown-list">
                                     <p class="empty-breakdown">No features selected yet.</p>
                                 </div>
-                                
+
                                 <hr class="summary-divider">
                                 <div class="summary-total">
                                     <span>Estimated Cost</span>
                                     <span class="total-amount" id="estimator-total-price">$0</span>
                                 </div>
 
-                                <button type="submit" class="btn btn-primary btn-full">Submit Consultation Request</button>
+                                <button type="submit" class="btn btn-primary btn-full">Submit Consultation
+                                    Request</button>
                             </div>
                         </div>
 
@@ -188,8 +205,9 @@
                 <span class="modal-icon-symbol">&#x2714;</span>
             </div>
             <h2>Submission Successful!</h2>
-            <p class="modal-description">Your customized project estimate has been stored. You are now entered into our consultation raffle.</p>
-            
+            <p class="modal-description">Your customized project estimate has been stored. You are now entered into our
+                consultation raffle.</p>
+
             <div class="submission-summary">
                 <h4>Consultation Ticket Details</h4>
                 <ul class="summary-details-list">
