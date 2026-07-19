@@ -119,8 +119,59 @@ function displayProjects(projectList) {
     });
 }
 
-// 3. Initialize dynamic render when DOM finishes loading
+// 3. Global Filter State
+let activeCategory = "all";
+let searchQuery = "";
+
+/**
+ * Filter projects based on the active category button and search keyword
+ */
+function filterProjects() {
+    const query = searchQuery.trim().toLowerCase();
+
+    const filtered = projects.filter(project => {
+        // Check category matching
+        const matchesCategory = activeCategory === "all" || project.category === activeCategory;
+
+        // Check search query matching across title, description, tech stack, and category label
+        const matchesSearch = !query ||
+            project.title.toLowerCase().includes(query) ||
+            project.description.toLowerCase().includes(query) ||
+            project.categoryLabel.toLowerCase().includes(query) ||
+            project.techStack.some(tech => tech.toLowerCase().includes(query));
+
+        return matchesCategory && matchesSearch;
+    });
+
+    displayProjects(filtered);
+}
+
+// 4. Initialize dynamic render and event listeners when DOM finishes loading
 document.addEventListener("DOMContentLoaded", () => {
     // Initial display of all portfolio projects
     displayProjects(projects);
+
+    // Search Input Listener
+    const searchInput = document.getElementById("search-input");
+    if (searchInput) {
+        searchInput.addEventListener("input", (e) => {
+            searchQuery = e.target.value;
+            filterProjects();
+        });
+    }
+
+    // Filter Buttons Listeners
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    filterButtons.forEach(button => {
+        button.addEventListener("click", () => {
+            // Update active UI state on filter buttons
+            filterButtons.forEach(btn => btn.classList.remove("active"));
+            button.classList.add("active");
+
+            // Update filter state and re-render
+            activeCategory = button.getAttribute("data-category") || "all";
+            filterProjects();
+        });
+    });
 });
+
