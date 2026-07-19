@@ -1,0 +1,56 @@
+<svg width="400" height="250" viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#bg)"/>
+  
+  <!-- Grid Lines -->
+  <g stroke="#334155" stroke-width="0.5" stroke-dasharray="4 4">
+    <line x1="50" y1="0" x2="50" y2="250"/>
+    <line x1="150" y1="0" x2="150" y2="250"/>
+    <line x1="250" y1="0" x2="250" y2="250"/>
+    <line x1="350" y1="0" x2="350" y2="250"/>
+    <line x1="0" y1="50" x2="400" y2="50"/>
+    <line x1="0" y1="150" x2="400" y2="150"/>
+  </g>
+  
+  <!-- Phone Frame Mockup -->
+  <rect x="130" y="20" width="140" height="220" rx="20" fill="#020617" stroke="#475569" stroke-width="3"/>
+  <rect x="135" y="25" width="130" height="210" rx="16" fill="#0F172A"/>
+  
+  <!-- Phone Speaker / Notch -->
+  <rect x="175" y="32" width="50" height="6" rx="3" fill="#334155"/>
+  
+  <!-- App Header inside Phone -->
+  <text x="200" y="60" font-family="'Inter', sans-serif" font-size="10" font-weight="700" fill="#F8FAFC" text-anchor="middle">FitQuest Tracker</text>
+  
+  <!-- Activity Ring in Phone -->
+  <circle cx="200" cy="115" r="30" fill="none" stroke="#1E293B" stroke-width="8"/>
+  <circle cx="200" cy="115" r="30" fill="none" stroke="url(#emeraldGrad)" stroke-width="8" stroke-dasharray="140 188" stroke-linecap="round"/>
+  <text x="200" y="118" font-family="'Inter', sans-serif" font-size="11" font-weight="800" fill="#F8FAFC" text-anchor="middle">75%</text>
+  
+  <!-- Stats Bars inside Phone -->
+  <rect x="150" y="165" width="100" height="15" rx="4" fill="#1E293B"/>
+  <rect x="150" y="165" width="80" height="15" rx="4" fill="url(#emeraldGrad)"/>
+  <text x="155" y="176" font-family="'Inter', sans-serif" font-size="8" font-weight="600" fill="#F8FAFC">Cardio</text>
+  
+  <rect x="150" y="188" width="100" height="15" rx="4" fill="#1E293B"/>
+  <rect x="150" y="188" width="55" height="15" rx="4" fill="url(#emeraldGrad)"/>
+  <text x="155" y="199" font-family="'Inter', sans-serif" font-size="8" font-weight="600" fill="#F8FAFC">Strength</text>
+  
+  <!-- UI Accents outside Phone -->
+  <circle cx="60" cy="80" r="15" fill="#1E293B"/>
+  <circle cx="60" cy="80" r="8" fill="#10B981" opacity="0.8"/>
+  <line x1="60" y1="95" x2="60" y2="150" stroke="#10B981" stroke-width="2" stroke-dasharray="4 4"/>
+  
+  <circle cx="340" cy="160" r="20" fill="#1E293B"/>
+  <path d="M330 165 L337 155 L343 162 L350 152" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

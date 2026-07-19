@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Apex Software Consulting portfolio showcase presenting our capabilities, custom software projects, and client testimonials.">
+    <meta name="author" content="Milton Chino">
+
+    <!-- Open Graph (Facebook, LinkedIn, etc.) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Apex Software Consulting - Portfolio Showcase">
+    <meta property="og:description"
+        content="Apex Software Consulting portfolio showcase presenting our capabilities, custom software projects, and client testimonials.">
+    <meta property="og:url" content="logo.svg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Apex Software Consulting - Portfolio Showcase">
+    <meta name="twitter:description"
+        content="Apex Software Consulting portfolio showcase presenting our capabilities, custom software projects, and client testimonials.">
+    <meta name="twitter:image" content="logo.svg">
+
+    <!-- One favicon (ICO works everywhere) -->
+    <link rel="icon" href="favicon.ico">
+
+    <!-- One Apple Touch Icon (iOS home screen) -->
+
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+
+    <title>Apex Software Consulting - Portfolio Showcase</title>
+    <!-- Google Font: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Local Stylesheet -->
+    <link type="text/css" rel="stylesheet" href="styles.css">
+    <!-- Portfolio JavaScript (Deferred execution to run after DOM loads) -->
+    <script src="portfolio.js" defer></script>
+</head>
+
+<body>
+    <!-- Header with Branding & Navigation -->
+    <header class="main-header">
+        <div class="header-container">
+            <a href="index.html" class="logo-link">
+                <img src="logo.svg" alt="Apex Software Consulting Logo" class="logo-img">
+            </a>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-item active">Portfolio</a>
+                <a href="estimator.html" class="nav-item">Cost Estimator</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>High-Performance Software for Forward-Thinking Businesses</h1>
+                <p>We build tailored digital products—from high-converting e-commerce web applications to specialized
+                    enterprise systems. Explore our recent consulting projects and success stories.</p>
+                <div class="hero-actions">
+                    <a href="estimator.html" class="btn btn-primary">Estimate Your Project Cost</a>
+                    <a href="#portfolio" class="btn btn-secondary">Browse Work</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Grid & Filter Section -->
+        <section id="portfolio" class="portfolio-section">
+            <div class="section-header">
+                <h2>Our Recent Work</h2>
+                <p class="section-subtitle">A curated selection of software solutions we designed, built, and deployed.
+                </p>
+            </div>
+
+            <!-- Statically-styled Filter & Search UI controls (JS actions for filtering are in the next milestone) -->
+            <div class="controls-container">
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="Search projects by keyword..."
+                        aria-label="Search projects">
+                    <span class="search-icon">&#x1F50D;</span>
+                </div>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-category="all">All</button>
+                    <button class="filter-btn" data-category="web">Web Apps</button>
+                    <button class="filter-btn" data-category="mobile">Mobile Apps</button>
+                    <button class="filter-btn" data-category="ecommerce">E-commerce</button>
+                </div>
+            </div>
+
+            <!-- Dynamic Projects Grid (populated by portfolio.js) -->
+            <div id="project-grid" class="project-grid">
+                <div class="loading-state">
+                    <div class="spinner"></div>
+                    <p>Loading projects...</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer with Author / Course Details -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <p class="footer-copyright">&copy; 2026 Apex Software Consulting. All rights reserved.</p>
+            <div class="footer-meta">
+                <span>Designed &amp; Developed by <strong>Milton Chino</strong></span>
+                <span class="separator">|</span>
+                <span>WDD 131-A2</span>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
