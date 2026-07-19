@@ -405,6 +405,33 @@ body {
     border: 1px solid #E2E8F0;
 }
 
+/* Project Live Link Button */
+.project-link-container {
+    margin-bottom: 1.25rem;
+}
+
+.project-live-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent1-color);
+    background-color: rgba(16, 185, 129, 0.08);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    padding: 0.4rem 0.85rem;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.project-live-btn:hover {
+    background-color: var(--accent1-color);
+    color: var(--white);
+    transform: translateY(-1px);
+}
+
+
 /* Testimonial Block inside Card */
 .project-testimonial {
     margin-top: auto;

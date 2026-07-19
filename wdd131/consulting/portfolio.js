@@ -60,6 +60,21 @@ const projects = [
             author: "Marcus Vance",
             role: "Head of Product, EduStream"
         }
+    },
+    {
+        id: "nutritional-advisory-landing",
+        title: "NutriLife Advisory Platform",
+        category: "web",
+        categoryLabel: "Web App",
+        image: "images/nutri-advisory.svg",
+        description: "A modern, high-converting nutrition & wellness advisory platform featuring customized dietary meal plans, client consultation scheduling, and healthy lifestyle guidance.",
+        techStack: ["HTML5", "CSS3", "JavaScript", "Canva Web"],
+        liveUrl: "https://asesoria-nutricional-landing.my.canva.site/",
+        testimonial: {
+            text: "The web landing page completely digitized our client intake. Consultation bookings doubled within the first month of launch.",
+            author: "Camila Morales",
+            role: "Founder & Lead Nutritionist"
+        }
     }
 ];
 
@@ -91,6 +106,13 @@ function displayProjects(projectList) {
         const techTagsMarkup = project.techStack
             .map(tech => `<span class="tech-tag">${tech}</span>`)
             .join("");
+
+        // Optional Live Project link button
+        const liveLinkMarkup = project.liveUrl
+            ? `<div class="project-link-container">
+                    <a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" class="project-live-btn">Visit Live Site &#8599;</a>
+               </div>`
+            : '';
             
         // Build card inner HTML structure
         card.innerHTML = `
@@ -105,6 +127,8 @@ function displayProjects(projectList) {
                 <div class="project-tech">
                     ${techTagsMarkup}
                 </div>
+
+                ${liveLinkMarkup}
                 
                 <div class="project-testimonial">
                     <p class="testimonial-quote">${project.testimonial.text}</p>
