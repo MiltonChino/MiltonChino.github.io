@@ -354,7 +354,7 @@ h1, h2, h3, h4, h5, h6 {
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1.75rem;
   list-style: none;
 }
 
@@ -363,8 +363,13 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: none;
   font-weight: 500;
   font-size: 0.95rem;
+  white-space: nowrap;
   transition: color var(--transition-fast);
   position: relative;
+}
+
+.mobile-cta-item {
+  display: none;
 }
 
 .nav-link::after {
@@ -1161,20 +1166,38 @@ h1, h2, h3, h4, h5, h6 {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 280px;
+    width: 285px;
     height: 100vh;
     background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(24px);
     flex-direction: column;
     justify-content: center;
-    gap: 2rem;
+    align-items: flex-start;
+    padding: 2.5rem 2rem;
+    gap: 1.65rem;
     transition: right var(--transition-normal);
-    box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+    box-shadow: -10px 0 30px rgba(0,0,0,0.12);
     z-index: 1001;
   }
 
   .nav-menu.active {
     right: 0;
+  }
+
+  .mobile-cta-item {
+    display: block;
+    width: 100%;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-light);
+  }
+
+  .mobile-nav-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .nav-actions #navCotizarBtn {
+    display: none;
   }
 
   .mobile-toggle {

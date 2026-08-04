@@ -35,8 +35,8 @@ function initNavbar() {
       mobileToggle.setAttribute('aria-expanded', isOpen);
     });
 
-    // Close menu when clicking links
-    document.querySelectorAll('.nav-link').forEach(link => {
+    // Close menu when clicking links or mobile quote button
+    document.querySelectorAll('.nav-link, .mobile-nav-btn').forEach(link => {
       link.addEventListener('click', () => {
         navMenu.classList.remove('active');
       });
